@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32228.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bitirme_Proje", "Bitirme_Proje\Bitirme_Proje.csproj", "{A655AB36-A363-484C-B3EE-F0CF0C998195}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A655AB36-A363-484C-B3EE-F0CF0C998195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A655AB36-A363-484C-B3EE-F0CF0C998195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A655AB36-A363-484C-B3EE-F0CF0C998195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A655AB36-A363-484C-B3EE-F0CF0C998195}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C6F1D85F-2D07-480E-B36D-F07EBE503241}
+	EndGlobalSection
+EndGlobal

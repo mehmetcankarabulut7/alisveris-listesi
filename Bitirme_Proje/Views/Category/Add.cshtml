@@ -1,0 +1,24 @@
+﻿
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Bitirme_Proje.EntityFramework.Entities
+@model Category
+
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    string mail = ViewBag.UserMail;
+}
+
+@section user_mail
+{
+    @mail
+}
+
+<form href="/Category/Add" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <label>Category</label>
+    <input name="Name" type="text" />
+    <br />
+    <button type="submit">Add</button>
+</form>
+<a href="/Category/Index">Back To List</a>

@@ -1,0 +1,36 @@
+﻿
+@using Bitirme_Proje.EntityFramework.Entities
+@model List<ShoppingList>
+
+@{
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    string mail = ViewBag.UserMail;
+}
+
+@section user_mail
+{
+    @mail
+}
+
+<br />
+<table class="table table-bordered">
+    @foreach (var item in Model)
+    {
+    <tr>
+        @if (item.OnShopping)
+        {
+            <td><a href="/Shopping/Index/@item.Id" class="w3-bar-item w3-bar-item">@item.Name</a></td>
+            <td>On Shopping</td>
+        }
+        else
+        {
+            <td><a href="/ShoppingList/Index/@item.Id" class="w3-bar-item w3-bar-item">@item.Name</a></td>
+            <td><a href="/ShoppingList/Delete?listId=@item.Id" class="btn btn-danger">Delete</a></td>
+        }
+    </tr>   
+    }
+</table>
+<br />
+<a href="/ShoppingList/Add" class="btn btn-info">New List</a>
+
+

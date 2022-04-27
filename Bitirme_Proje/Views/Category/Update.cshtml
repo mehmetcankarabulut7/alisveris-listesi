@@ -1,0 +1,34 @@
+﻿
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Bitirme_Proje.EntityFramework.Entities
+@model Category
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    string mail = ViewBag.UserMail;
+}
+
+@section user_mail
+{
+    @mail
+}
+
+
+<form method="post">
+    <table>
+        <tr>
+            <td>Id</td>
+            <td><input name="Id" value="@Model.Id" readonly /></td>
+        </tr>
+        <tr>
+            <td>Category</td>
+            <td><input name="Name" value="@Model.Name" /></td>
+        </tr>
+    </table>
+    <button href="/Category/Update" type="submit">Update</button>
+</form>
+<br />
+<a href="/Category/Index">Back To List</a>
+
+
+

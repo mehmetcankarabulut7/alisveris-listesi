@@ -1,0 +1,24 @@
+﻿
+@using Bitirme_Proje.EntityFramework.Entities
+@model ShoppingList
+
+@{
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    string mail = ViewBag.UserMail;
+}
+
+@section user_mail
+{
+    @mail
+}
+
+<form href="/ShoppingList/Add" method="post">
+    <table>
+        <tr>
+            <td>List Name</td>
+            <td><input name="Name" type="text" /></td>
+            <td><button type="submit">Add</button></td>
+        </tr>
+    </table>
+</form>
+<a href="/User/GetShoppingLists">Back To List</a>

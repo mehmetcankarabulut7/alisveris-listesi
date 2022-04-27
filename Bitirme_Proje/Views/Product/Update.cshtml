@@ -1,0 +1,32 @@
+﻿
+@using Bitirme_Proje.EntityFramework.Entities
+@model Product
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    string mail = ViewBag.UserMail;
+    List<Category> categories = ViewBag.Categories;
+}
+
+@section user_mail
+{
+    @mail
+}
+
+<form href="/Product/Update" method="post">
+    <label>Id</label>
+    <input name="Id" type="text" value="@Model.Id" readonly />
+    <br />
+    <label>Name</label>
+    <input name="Name" type="text" value="@Model.Name" />
+    <br />
+    <label>Category</label>
+    <select name="CategoryId">
+        @foreach (var item in categories)
+        {
+            <option value="@item.Id">@item.Name</option>
+        }
+    </select>
+    <button type="submit">Update</button>
+</form>
+<a href="/Product/Index">Back To List</a>

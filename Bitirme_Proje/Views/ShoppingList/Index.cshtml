@@ -1,0 +1,27 @@
+﻿
+@using Bitirme_Proje.EntityFramework.Entities
+@model ShoppingList
+
+@{
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    string mail = ViewBag.UserMail;
+}
+
+@section user_mail
+{
+    @mail
+}
+<br />
+<table class="table table-bordered">
+    @foreach (var item in Model.ListProducts)
+    {
+        <tr>
+            <td><a href="/ListProduct/Detail?listId=@Model.Id&productId=@item.Product.Id">@item.Product.Name</a></td>
+            <td><a href="/ListProduct/Delete?listId=@Model.Id&productId=@item.Product.Id" class="btn btn-danger">Delete</a></td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/ListProduct/AllProducts/@Model.Id" class="btn btn-primary">Add Product</a>
+<a href="/Shopping/Index/@Model.Id" class="btn btn-info">Go Shopping</a>
+

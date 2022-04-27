@@ -1,0 +1,63 @@
+﻿@using Bitirme_Proje.EntityFramework.Entities
+@model List<Product>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    string mail = ViewBag.UserMail;
+    int listId = ViewBag.ListId;
+    string searchText = ViewBag.SearchText;
+    List<Category> categories = ViewBag.Categories;
+}
+
+@section user_mail
+{
+    @mail
+}
+
+<form asp-action="SearchProductsByName" method="post">
+    <input type="text" name="listId" value="@listId" hidden />
+    
+    <table>
+        <tr>
+            <td><input type="text" name="searchText" value="@searchText" /></td>
+            <td><button type="submit">Search</button></td>
+        </tr>
+    </table>
+</form>
+
+<form asp-action="FilterByCategoryName" method="post">
+    <input type="text" name="listId" value="@listId" hidden />
+    <table>
+        <tr>
+            <td>
+                <select name="categoryName">
+                    @foreach (var item in categories)
+                    {
+                        <option value="@item.Name">@item.Name</option>
+                    }
+                </select>
+            </td>
+            <td><button type="submit">Filter</button></td>
+        </tr>
+    </table> 
+</form>
+
+<table>
+    <tr>
+        <th>Product</th>
+        <th>Category</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td><a href="/ListProduct/AddListProduct?listId=@listId&productId=@item.Id">@item.Name</a></td>
+            <td>@item.Category.Name</td>
+        </tr>
+
+    }
+</table>
+<br />
+<a href="/ShoppingList/Index/@listId">Back To List</a>
+
+

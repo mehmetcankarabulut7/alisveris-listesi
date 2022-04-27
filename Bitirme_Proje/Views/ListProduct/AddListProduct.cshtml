@@ -1,0 +1,29 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Bitirme_Proje.ViewModel
+@model ProductViewModel
+
+@{
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    string mail = ViewBag.UserMail;
+}
+
+@section user_mail
+{
+    @mail
+}
+
+<form asp-action="AddListProduct" method="post">
+    <input name="ListId" type="hidden" value="@Model.ListId" readonly />
+    <input name="ProductId" type="hidden" value="@Model.ProductId" readonly />
+    <table>
+        <tr>
+            <td>Product Name</td>
+            <td><input type="text" name="ProductName" value="@Model.ProductName" readonly /></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><input type="text" name="Description" /></td>
+        </tr>
+    </table>
+    <button type="submit">Add</button>
+</form>
