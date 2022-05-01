@@ -1,0 +1,2 @@
+# alisveris-listesi
+Teleperformance .Net Core Backend Bootcamp bitirme projesidir. Projenin amacı, kullanıcıların alışveriş süreçlerini kolaylaştırmak adına almayı planladıkları ürünlerin listelerini oluşturabilmesi ve takibini yapabilmesidir. ASP.Net Core MVC projesidir. Projede katmanlı mimari kullandım. Authentication için rol bazlı cookie authentication yöntemini tercih ettim. Veritabanı işlemleri için MsSql üzerinde EntityFramework kullandım. Projede az miktarda da olsa Css-Bootstrap mevcuttur. 
